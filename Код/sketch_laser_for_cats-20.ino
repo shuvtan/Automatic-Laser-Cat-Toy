@@ -76,14 +76,14 @@ y_servo.write(y_position);
 x_servo.write(x_position);
 
 if (testmode > 0) {
-for(int i=10; i<(180); i++) {
+for(int i=10; i<(10); i++) {
 x_servo.write(i);
 Serial.print("X=");
 Serial.println(i);
 delay(100);
 }
 x_servo.write(x_position);
-for(int i=10; i<(180); i++) {
+for(int i=10; i<(10); i++) {
 y_servo.write(i);
 Serial.print("Y=");
 Serial.println(i);
@@ -102,7 +102,7 @@ for (int i = 0;; i += 1) {
   // Получаем значение от датчика расстояния и сохраняем его в переменную
   unsigned int distance1 = sonar.ping_cm();
  //Если котик поймал лазер, т.е. расстояние до объекта изменилось -> меняем положение
-  if (distance1!=distance2) {
+  if (abs(distance1-distance2)>=10) {
     //Выбираем параметры для рандомного поворота
     movement_time = random(20,50);
     x_new_position = random(min_x+minimal_movement, max_x-minimal_movement);
@@ -133,9 +133,10 @@ for (int i = 0;; i += 1) {
     }
     x_old_position = x_new_position;
     y_old_position = y_new_position;
+    //Запоминаем новое расстояние до объекта, пока котик не поймал лазер
+    distance2 = sonar.ping_cm();
   }
-  //Запоминаем новое расстояние до объекта, пока котик не поймал лазер
-  distance2 = sonar.ping_cm();
+ 
 
   // Печатаем расстояние в мониторе порта
   Serial.print(distance1);

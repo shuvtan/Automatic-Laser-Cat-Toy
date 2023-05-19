@@ -10,6 +10,8 @@
 
 Документация продукта и протокол испытаний: [ALCT_production](https://github.com/shuvtan/Automatic-Laser-Cat-Toy/blob/master/ALCT_production.pdf)
 
+Инструкция пользователя: [ALCT_instruction](https://github.com/shuvtan/Automatic-Laser-Cat-Toy/blob/master/ALCT_instruction.jpg)
+
 Схема систем: [ALCT Cхема систем](https://github.com/shuvtan/Automatic-Laser-Cat-Toy/blob/master/ALCT%20%D0%A1%D1%85%D0%B5%D0%BC%D0%B0%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC.jpg)
 
 Прошивка устройства и тест-код: [Код](https://github.com/shuvtan/Automatic-Laser-Cat-Toy/tree/master/%D0%9A%D0%BE%D0%B4) -
